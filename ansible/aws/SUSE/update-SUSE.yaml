@@ -1,0 +1,9 @@
+---
+ - name: update SLES rep
+   hosts: all
+   become: yes
+   tasks:
+    - name: refresh
+      command: zypper refresh
+    - name: update
+      command: zypper update -y
