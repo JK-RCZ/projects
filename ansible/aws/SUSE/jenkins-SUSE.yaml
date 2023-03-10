@@ -6,15 +6,13 @@
    tasks:
     - name: Refresh
       command: zypper update -y
-    - name: Install JAVA
-      command: zypper install -y java-1_8_0-openjdk
     - name: Add Jenkins Rep
       command: sudo zypper addrepo -f http://pkg.jenkins.io/opensuse-stable/ jenkins
     - name: Install Java 
       community.general.zypper:
        name: java-11-openjdk
        state: present
-    - name: Install Jenkins Enable Jenkins
+    - name: Install Jenkins
       community.general.zypper:
        name: jenkins
        state: present
