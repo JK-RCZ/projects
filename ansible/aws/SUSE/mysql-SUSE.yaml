@@ -3,14 +3,14 @@
    hosts: all
    become: yes
    tasks:
-#   - name: download mysql rep
-#      command: wget https://dev.mysql.com/get/mysql80-community-release-sl15-6.noarch.rpm
+   - name: download mysql rep
+      command: wget https://dev.mysql.com/get/mysql80-community-release-sl15-6.noarch.rpm
 
-#    - name: install mysql rep
-#      command: rpm mysql80-community-release-sl15-6.noarch.rpm 
+    - name: install mysql rep
+      command: rpm mysql80-community-release-sl15-6.noarch.rpm 
 
-#    - name: importing mysql GnuPG Key
-#      command: rpm --import /etc/RPM-GPG-KEY-mysql-2022
+    - name: importing mysql GnuPG Key
+      command: rpm --import /etc/RPM-GPG-KEY-mysql-2022
 
     - name: refresh rep
       command: zypper refresh

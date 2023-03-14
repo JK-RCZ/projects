@@ -4,14 +4,13 @@
    become: yes
 
    tasks:
-    - name: Refresh
-      command: zypper update -y
     - name: Add Jenkins Rep
       command: sudo zypper addrepo -f http://pkg.jenkins.io/opensuse-stable/ jenkins
     - name: Install Java 
       community.general.zypper:
        name: java-11-openjdk
        state: present
+       disable_gpg_check: true
     - name: Install Jenkins
       community.general.zypper:
        name: jenkins

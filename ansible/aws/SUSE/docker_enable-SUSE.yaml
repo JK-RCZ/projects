@@ -1,0 +1,11 @@
+---
+ - name: Enable Docker
+   hosts: all
+   become: yes
+
+   tasks:
+    - name: Start Docker
+      command: systemctl start docker
+    - name: Enable Docker
+      command: systemctl enable docker
+    
